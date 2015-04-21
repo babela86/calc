@@ -3,32 +3,61 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Facelets Hello Greeting</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:graphicImage url="#{resource['images:duke.waving.gif']}" 
-                            alt="Duke waving his hand"/>
-            <h2>Hello, my name is Duke. What's yours?</h2>
-            <h:inputText id="username"
-                         title="My name is: "
-                         value="#{hello.name}"
-                         required="true"
-                         requiredMessage="Error: A name is required."
-                         maxlength="25" />
-            <p></p>
-            <h:commandButton id="submit" value="Submit" 
-                             action="response?faces-redirect=true" />
-            <h:commandButton id="reset" value="Reset" type="reset" />
-        </h:form>
-        <div class="messagecolor">
-            <h:messages showSummary="true" 
-                        showDetail="false"
-                        errorStyle="color: #d20005" 
-                        infoStyle="color: blue"/>
-        </div>
+    <h:dataTable id="items" captionClass="list-caption" columnClasses="list-column-center, list-column-left,list-column-rigt"
+    footerClass="list-footer" headerClass="list-header" rowClasses="list-row-even, list-row-odd" styleClass="list-background"
+    summary="#{tableItems.sumary}" value="#{tableItems.allItems}" border="1" var="item">
+    
+    <h:column>
+    <f:facet name="header">
+    <h:outputText value="#{tableItems.id}" />
+    </f:facet>
+    <h:outputText id="quantity" value="#{item.id}" title="#{tableItems.id}"/>
+    </h:column>
+    
+    <h:column>
+    <f:facet name="header">
+    <h:outputText value="#{tableItems.name}" />
+    </f:facet>
+    <h:outputText id="quantity" value="#{item.value}" title="#{tableItems.name}"/>
+    </h:column>
+    
+    <h:column>
+    <f:facet name="caption">
+    <h:outputText value="#{tableItems.caption}" />
+    </f:facet>
+    <h:outputText>hello</h:outputText>
+    </h:column>
+    
+    </h:dataTable>
+    
+    
+<!--         <h:form> -->
+<!--             <h:graphicImage url="#{resource['images:duke.waving.gif']}"  -->
+<!--                             alt="Duke waving his hand"/> -->
+<!--             <h2>Hello, my name is Duke. What's yours?</h2> -->
+<!--             <h:inputText id="username" -->
+<!--                          title="My name is: " -->
+<!--                          value="#{hello.name}" -->
+<!--                          required="true" -->
+<!--                          requiredMessage="Error: A name is required." -->
+<!--                          maxlength="25" /> -->
+<!--             <p></p> -->
+<!--             <h:commandButton id="submit" value="Submit"  -->
+<!--                              action="response?faces-redirect=true" /> -->
+<!--             <h:commandButton id="reset" value="Reset" type="reset" /> -->
+<!--         </h:form> -->
+<!--         <div class="messagecolor"> -->
+<!--             <h:messages showSummary="true"  -->
+<!--                         showDetail="false" -->
+<!--                         errorStyle="color: #d20005"  -->
+<!--                         infoStyle="color: blue"/> -->
+<!--         </div> -->
     </h:body>
 </html>
 
