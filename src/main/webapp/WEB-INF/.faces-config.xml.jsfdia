@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#playjsf#page1.xhtml"
+  PATH="/playjsf/page1.xhtml" SHAPE="32,56,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#playjsf#page1.xhtml:0" NAME="item"
+   PATH="/playjsf/page1.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="page2::#playjsf#page2.xhtml" NAME="output"
+    PATH="/playjsf/page2.xhtml" TARGET="rules:#playjsf#page2.xhtml"
+    TITLE="page2" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="page1::#playjsf#page1.xhtml" NAME="output1"
+    PATH="/playjsf/page1.xhtml" TARGET="rules:#playjsf#page1.xhtml"
+    TITLE="page1" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#playjsf#page2.xhtml"
+  PATH="/playjsf/page2.xhtml" SHAPE="272,64,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#playjsf#page2.xhtml:0" NAME="item"
+   PATH="/playjsf/page2.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="page2::#playjsf#page2.xhtml" NAME="output"
+    PATH="/playjsf/page2.xhtml" TARGET="rules:#playjsf#page2.xhtml"
+    TITLE="page2" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
