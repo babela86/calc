@@ -8,18 +8,26 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     
     <h:head>
-        <title>Many Check Box</title>
+        <title>Calculator</title>
     </h:head>
     <h:body>
 
 	<h:form>
-		<ui:repeat value="#{checkBoxItems2.values}" var="item">
- 			#{item}
- 		</ui:repeat>
-		<p />
-			<h:commandButton id="back" action="index2" value="Voltar" />
-<!-- 		<h:commandButton id="back" action="index?faces-redirect=true" value="Voltar" /> -->
+		<p>#{calculator.expression}</p>
+		<p>#{calculator.element(0)+calculator.element(1)}</p>
+		<p>#{calculator.sumElement(calculator.element(0),calculator.element(0))}</p>
+		
+		<h:commandButton id="back" action="index2" value="Voltar" />
 	</h:form>
+
+
+<!-- 	<h:form> -->
+<!-- 		<ui:repeat value="#{checkBoxItems2.values}" var="item"> -->
+<!--  			#{item} -->
+<!--  		</ui:repeat> -->
+<!-- 		<p /> -->
+<!-- 			<h:commandButton id="back" action="index2" value="Voltar" /> -->
+<!-- 	</h:form> -->
 
 
 
