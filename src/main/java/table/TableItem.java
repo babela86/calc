@@ -1,6 +1,8 @@
 package table;
 
 public class TableItem {
+	
+	// this is just for test
 	private int id;
 	private String value;
 	private static int counter=1;
