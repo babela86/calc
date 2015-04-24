@@ -10,39 +10,44 @@
     </h:head>
     <h:body>
 	
+<!-- 	qualquer coisa -->
 	<h:form>
-		<h:commandButton id="number0" action="response2" value="0"
+		<h:inputText readonly="true" value="#{calculator.expression}" />
+		<br /><br />
+		<h:commandButton id="number0" value="0"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number1" action="response2" value="1"
+		<h:commandButton id="number1" value="1"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number2" action="response2" value="2"
+		<h:commandButton id="number2" value="2"
+			actionListener="#{calculator.key}" /><br />
+		<h:commandButton id="number3" value="3"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number3" action="response2" value="3"
+		<h:commandButton id="number4" value="4"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number4" action="response2" value="4"
+		<h:commandButton id="number5" value="5"
+			actionListener="#{calculator.key}" /><br />
+		<h:commandButton id="number6" value="6"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number5" action="response2" value="5"
+		<h:commandButton id="number7" value="7"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number6" action="response2" value="6"
+		<h:commandButton id="number8" value="8"
+			actionListener="#{calculator.key}" /><br />
+		<h:commandButton id="number9" value="9"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number7" action="response2" value="7"
+		<h:commandButton id="plus" value="+"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number8" action="response2" value="8"
+		<h:commandButton id="minus" value="-"
+			actionListener="#{calculator.key}" /><br />
+		<h:commandButton id="times" value="*"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="number9" action="response2" value="9"
+		<h:commandButton id="divide" value="/"
 			actionListener="#{calculator.key}" />
-		<h:commandButton id="plus" action="response2" value="+"
-			actionListener="#{calculator.key}" />
-		<h:commandButton id="minus" action="response2" value="-"
-			actionListener="#{calculator.key}" />
-		<h:commandButton id="times" action="response2" value="*"
-			actionListener="#{calculator.key}" />
-		<h:commandButton id="divide" action="response2" value="/"
-			actionListener="#{calculator.key}" />
-		<h:commandButton id="reset" action="response2" value="Limpar"
-			actionListener="#{calculator.key}" />
-		<h:commandButton action="index2" value="Somar 1+2" onclick="somar1m2()"/>
-			<script type="text/javascript" src="resources/js/javascript.js"></script>
+		<h:commandButton id="reset" value="C"
+			actionListener="#{calculator.key}" /><br />
+		<h:commandButton id="result" value="Resultado"
+			actionListener="#{calculator.key}" />			
+<!-- 		<h:commandButton action="index2" value="Somar 1+2" onclick="somar1m2()"/> -->
+<!-- 			<script type="text/javascript" src="resources/js/javascript.js"></script> -->
 	</h:form>
 
 	<!-- 	<h:form> -->
