@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Basic Calculator</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:messages id="errores" autoUpdate="true" />
+
+		<p:panel id="panelSumas" header="Panel de sumas">
+			<p:panelGrid columns="2">
+				<h:outputLabel value="Operador 1:" for="op1" />
+				<p:inputText id="op1" value="#{sumadorController.operador1}"
+					required="true" label="Operador 1">
+					<f:convertNumber />
+				</p:inputText>
+				<h:outputLabel value="Operador 2:" for="op2" />
+				<p:inputText id="op2" value="#{sumadorController.operador2}"
+					required="true" label="Operador 2">
+					<f:convertNumber />
+				</p:inputText>
+				<h:outputLabel value="Resultado:" for="res" />
+				<p:inputText id="res" value="#{sumadorController.resultado}"
+					readonly="true">
+					<f:convertNumber />
+				</p:inputText>
+				<p:commandButton value="sumar" ajax="true"
+					actionListener="#{sumadorController.doSuma()}" process="panelSumas"
+					update="panelSumas panelHistorial errores" />
+			</p:panelGrid>
+		</p:panel>
+
+		<p:panelGrid columns="2">
+			<p:panel id="panelHistorial" header="Historial de sumas">
+				<p:panelGrid columns="2">
+					<p:panel id="panelHistorial" header="Historial de sumas">
+						<p:dataGrid id="datagridDatos" columns="3" paginator="true"
+							rows="6" emptyMessage="Sin operaciones"
+							value="#{sumadorController.operaciones}" var="operacion">
+							<p:column>
+								<p:panel id="panel" header="#{operacion.id}">
+									<h:panelGrid columns="2">
+										<h:outputLabel value="Op1:" />
+										<h:outputText value="#{operacion.operando1}" />
+										<h:outputLabel value="Op2:" />
+										<h:outputText value="#{operacion.operando2}" />
+										<h:outputLabel value="Res:" />
+										<h:outputText value="#{operacion.resultado}" />
+									</h:panelGrid>
+								</p:panel>
+								<p:draggable for="panel" helper="clone" revert="true" />
+							</p:column>
+						</p:dataGrid>
+					</p:panel>
+			</p:panel>
+
+			<p:panel id="panelFavoritas" header="Sumas favoritas">
+
+			</p:panel>
+		</p:panelGrid>
+	</h:form>
+
+
+
+	<!-- 	<h:form> -->
+	<!-- 		<h:messages style="color:red" /> -->
+	<!-- 		<h:panelGrid columns="2"> -->
+	<!-- 			<h:outputLabel value="Operador 1:" for="op1" /> -->
+	<!-- 			<h:inputText id="op1" value="#{sumadorController.operador1}" -->
+	<!-- 				label="Operador 1" required="true"> -->
+	<!-- 				<f:convertNumber /> -->
+	<!-- 			</h:inputText> -->
+	<!-- 			<h:outputLabel value="Operador 2:" for="op2" /> -->
+	<!-- 			<h:inputText id="op2" value="#{sumadorController.operador2}" -->
+	<!-- 				label="Operador 2" required="true"> -->
+	<!-- 				<f:convertNumber /> -->
+	<!-- 			</h:inputText> -->
+	<!-- 			<h:outputLabel value="Resultado:" for="res" /> -->
+	<!-- 			<h:inputText id="res" value="#{sumadorController.resultado}" -->
+	<!-- 				readonly="true"> -->
+	<!-- 				<f:convertNumber /> -->
+	<!-- 			</h:inputText> -->
+	<!-- 			<h:commandButton value="somar" -->
+	<!-- 				actionListener="#{sumadorController.doSuma()}" action="expTut.xhtml" /> -->
+	<!-- 		</h:panelGrid> -->
+
+
+	<!-- 		<h:dataTable value="#{sumadorController.operaciones}" var="operacion"> -->
+	<!-- 			<f:facet name="header"> -->
+	<!-- Historico de sumas .... -->
+	<!-- </f:facet> -->
+	<!-- 			<h:column> -->
+	<!-- 				<f:facet name="header"> ID </f:facet> -->
+	<!-- 				<h:outputText value="#{operacion.id}" /> -->
+	<!-- 			</h:column> -->
+	<!-- 			<h:column> -->
+	<!-- 				<f:facet name="header"> Operando 1 </f:facet> -->
+	<!-- 				<h:outputText value="#{operacion.operando1}" /> -->
+	<!-- 			</h:column> -->
+	<!-- 			<h:column> -->
+	<!-- 				<f:facet name="header"> Operando 2 </f:facet> -->
+	<!-- 				<h:outputText value="#{operacion.operando2}" /> -->
+	<!-- 			</h:column> -->
+	<!-- 			<h:column> -->
+	<!-- 				<f:facet name="header"> Resultado </f:facet> -->
+	<!-- 				<h:outputText value="#{operacion.resultado}" /> -->
+	<!-- 			</h:column> -->
+
+	<!-- 			<h:column> -->
+	<!-- 				<h:commandButton value="eliminar" -->
+	<!-- 					actionListener="#{sumadorController.doEliminar(operacion)}" -->
+	<!-- 					action="expTut.xhtml" /> -->
+	<!-- 			</h:column> -->
+	<!-- 		</h:dataTable> -->
+
+	<!-- 	</h:form> -->
+
+
+</h:body>
+</html>
