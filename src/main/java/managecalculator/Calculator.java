@@ -72,7 +72,6 @@ public class Calculator implements Serializable {
 			return s.substring(0, s.length()-2);
 		}
 		
-		/* qualquer coisa*/
 		return r+"";
 		
 	}
